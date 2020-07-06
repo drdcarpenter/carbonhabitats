@@ -1,0 +1,13 @@
+Package: {{ Package }}
+Title: {{ Title }}
+Version: 1.0.0
+Authors@R: 
+    c(person(given = "Dan", family = "Carpenter", email = "drdcarpenter@googlemail.com",
+      role = c("aut", "cre")))
+Maintainer: {{ Maintainer }}
+Description: {{ Description }}
+License: {{ License }}
+LazyData: true
+URL: {{ URL }}
+BugReports: {{ BugReports }}
+Encoding: UTF-8
