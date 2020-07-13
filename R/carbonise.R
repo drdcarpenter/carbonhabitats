@@ -4,7 +4,7 @@
 #' @description FUNCTION_DESCRIPTION
 #' @param x habitats data frame
 #' @param habitats name of the column containing priority habitats types
-#' @return sf features with stored above ground carbon and sequestered carbon per year for each fature
+#' @return sf features with stored above ground carbon and sequestered carbon per year for each feature
 #' @details DETAILS
 #' @examples 
 #' \dontrun{
@@ -22,7 +22,6 @@
 
 carbonise <- function(x, habitats){
   # convert factors to character for join
-  #x <- x %>% dplyr::mutate(dplyr::across(where(is.factor(~.x)), as.character))
   x <- dplyr::mutate_if(x, is.factor, as.character)
   
   # calculate feature areas
