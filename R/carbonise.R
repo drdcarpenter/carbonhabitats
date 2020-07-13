@@ -1,5 +1,25 @@
 
 
+#' @title carbonise
+#' @description FUNCTION_DESCRIPTION
+#' @param x habitats data frame
+#' @param habitats name of the column containing priority habitats types
+#' @return sf features with stored above ground carbon and sequestered carbon per year for each fature
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso 
+#'  \code{\link[dplyr]{mutate_all}},\code{\link[dplyr]{mutate}},\code{\link[dplyr]{mutate-joins}}
+#'  \code{\link[sf]{geos_measures}}
+#' @rdname carbonise
+#' @export 
+#' @importFrom dplyr mutate_if mutate left_join
+#' @importFrom sf st_area
+
 carbonise <- function(x, habitats){
   # convert factors to character for join
   #x <- x %>% dplyr::mutate(dplyr::across(where(is.factor(~.x)), as.character))
