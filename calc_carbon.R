@@ -13,7 +13,7 @@ phabs <- mutate_if(phabs, is.factor, as.character)
 # join carbon data to habs data
 c_phabs <- left_join(phabs, carbon)
 
-# calcaulte stored C and Cseq per feature
+# calculate stored C and Cseq per feature
 c_phabs <- c_phabs %>% 
   mutate(Cstor = (Area * AGB)) %>% 
   mutate(ACseq = (Area * Cseq))

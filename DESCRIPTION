@@ -1,4 +1,4 @@
-Package: {{ Package }}
+Package: carbonhabitats
 Title: {{ Title }}
 Version: 1.0.0
 Authors@R: 
@@ -12,3 +12,6 @@ URL: {{ URL }}
 BugReports: {{ BugReports }}
 Encoding: UTF-8
 Imports:
+  dplyr,
+  magrittr,
+  sf
