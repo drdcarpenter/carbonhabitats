@@ -1,17 +1,21 @@
 Package: carbonhabitats
-Title: {{ Title }}
+Title: Calculate carbon storage and sequestration of UK prioirty habitats
 Version: 1.0.0
 Authors@R: 
     c(person(given = "Dan", family = "Carpenter", email = "drdcarpenter@googlemail.com",
       role = c("aut", "cre")))
-Maintainer: {{ Maintainer }}
-Description: {{ Description }}
-License: {{ License }}
+Maintainer: Dan Carpenter <drdcarpenter@googlemail.com>
+Description: This is a simple one-function package to calculate the amount of carbon stored (in above ground biomass and in soil) and sequestered by prioirty habitats in the UK.  
+  This is based on Field et al. (2020) The value of habitats of conservation importance to climate change mitigation in the UK. Biological Conservation, vol. 248. https://doi.org/10.1016/j.biocon.2020.108619
+  Carbon storage and sequestration values are taken from Taylor et al. (2019) High carbon burial rates by small ponds in the landscape. Frontiers in Ecology and the Environment. vol. 17. https://doi.org/10.1002/fee.1988
+  The package also uses soil carbon data from the FAO Global Soil Organic Carbon Map. http://www.fao.org/global-soil-partnership/pillars-action/4-information-and-data-new/global-soil-organic-carbon-gsoc-map/en/
+License: file LICENSE
 LazyData: true
-URL: {{ URL }}
+URL: https://github.com/drdcarpenter/carbonhabitats
 BugReports: {{ BugReports }}
 Encoding: UTF-8
 Imports:
+  exactextractr,
   dplyr,
   magrittr,
   sf
