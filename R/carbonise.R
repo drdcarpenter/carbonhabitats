@@ -25,7 +25,7 @@ carbonise <- function(x, habitats){
   # convert factors to character for join
   x <- dplyr::mutate_if(x, is.factor, as.character)
   
-  # calculate feature areas
+  # calculate feature areas in hectares
   x <- x %>% dplyr::mutate(Area = as.numeric(sf::st_area(x) / 10000))
   
   # join carbon data to habitats data
