@@ -19,6 +19,7 @@
 #' @export 
 #' @importFrom dplyr mutate_if mutate left_join
 #' @importFrom sf st_area
+#' @importFrom exactextractr exact_extract
 
 carbonise <- function(x, habitats){
   # convert factors to character for join
@@ -34,6 +35,12 @@ carbonise <- function(x, habitats){
   cx <- cx %>% 
     dplyr::mutate(storedC = as.numeric(Area * AGB)) %>% 
     dplyr::mutate(seqC = as.numeric(Area * Cseq))
+  
+  # calculate soil carbon per feature
+  cx$soilC <- exactextractr::exact_extract(soilcarbon, cx, "mean")
+  
+  # calculate total C
+  cx <- cx %>% dplyr::mutate(cx, totalC = (storedC + soilC))
   
   return(cx)
 }
