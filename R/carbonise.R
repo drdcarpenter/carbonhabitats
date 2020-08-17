@@ -33,14 +33,14 @@ carbonise <- function(x, habitats){
   
   # calculate stored C and sequestered C per feature
   cx <- cx %>% 
-    dplyr::mutate(storedC = as.numeric(Area * AGB)) %>% 
-    dplyr::mutate(seqC = as.numeric(Area * Cseq))
+    dplyr::mutate(storedC = as.numeric(.data$Area * .data$AGB)) %>% 
+    dplyr::mutate(seqC = as.numeric(.data$Area * .data$Cseq))
   
   # calculate soil carbon per feature
   cx$soilC <- exactextractr::exact_extract(soilcarbon, cx, "mean")
   
   # calculate total C
-  cx <- cx %>% dplyr::mutate(cx, totalC = (storedC + soilC))
+  cx <- cx %>% dplyr::mutate(cx, totalC = (.data$storedC + .data$soilC))
   
   return(cx)
 }
