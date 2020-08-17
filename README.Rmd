@@ -23,7 +23,7 @@ The goal of carbonhabitats is to calculate the carbon storage and sequestration 
 
 ## Installation
 
-You can install the latest version of carbonhabitats from [Github](https://github,com/drdcarpenter/carbonhabitats) with:
+You can install the latest version of carbonhabitats from [Github](https://github.com/drdcarpenter/carbonhabitats) with:
 
 ``` r
 # install.packages("devtools")

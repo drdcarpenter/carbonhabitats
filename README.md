@@ -15,7 +15,7 @@ sequestration of UK priority habitats.
 ## Installation
 
 You can install the latest version of carbonhabitats from
-[Github](https://github,com/drdcarpenter/carbonhabitats) with:
+[Github](https://github.com/drdcarpenter/carbonhabitats) with:
 
 ``` r
 # install.packages("devtools")
