@@ -32,10 +32,6 @@ carbonise <- function(x, habitats){
   cx <- dplyr::left_join(x, carbon, by = c("S41Habitat" = habitats))
   
   # calculate stored C and sequestered C per feature
-  # cx <- cx %>% 
-  #   dplyr::mutate(storedC = as.numeric(.data$Area * .data$AGB)) %>% 
-  #   dplyr::mutate(seqC = as.numeric(.data$Area * .data$Cseq))
-  # 
   cx$storedC <- as.numeric(cx$Area * cx$AGB)
   cx$seqC <- as.numeric(cx$Area * cx$Cseq)
   
@@ -43,8 +39,6 @@ carbonise <- function(x, habitats){
   cx$soilC <- exactextractr::exact_extract(soilcarbon, cx, "mean")
   
   # calculate total C
-  # cx <- cx %>% dplyr::mutate(cx, totalC = (.data$storedC + .data$soilC))
-  
   cx$totalC <- cx$storedC * cx$soilC
   
   return(cx)
