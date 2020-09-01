@@ -12,7 +12,7 @@ Description: This is a simple one-function package to calculate the amount of ca
 License: file LICENSE
 LazyData: true
 URL: https://github.com/drdcarpenter/carbonhabitats
-BugReports: {{ BugReports }}
+BugReports: https://github.com/drdcarpenter/carbonhabitats/issues
 Encoding: UTF-8
 Imports:
   exactextractr,
