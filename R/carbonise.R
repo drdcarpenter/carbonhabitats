@@ -2,7 +2,7 @@
 
 #' @title carbonise
 #' @description Calculate the carbon storage (above ground biomass and soil carbon) and sequestration for UK priority habitats.
-#' @param x habitats data frame
+#' @param x habitats sf dataframe
 #' @param habitats name of the column containing priority habitats types
 #' @return sf features with stored above ground carbon and sequestered carbon per year for each feature
 #' @details The function calculates the amount of above ground carbon stored in each priority habitat type using data taken from two papers (see main package description for references).
@@ -11,13 +11,14 @@
 #' The input dataset needs to be an sf features dataset.
 #' The CRS for this package is EPSG:27700.  You may need to transform your data for the function to work.
 #' @examples 
-#' c <- carbonise(x, habitats = "S41Habitat")
+#' # NOT RUN
+#' # c <- carbonise(x, habitats = "S41Habitat")
 #' @seealso 
 #'  \code{\link[dplyr]{mutate_all}},\code{\link[dplyr]{mutate}},\code{\link[dplyr]{mutate-joins}}
 #'  \code{\link[sf]{geos_measures}}
 #' @rdname carbonise
 #' @export 
-#' @importFrom dplyr mutate_if mutate left_join
+#' @importFrom dplyr mutate left_join
 #' @importFrom sf st_area
 #' @importFrom exactextractr exact_extract
 

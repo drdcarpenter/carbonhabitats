@@ -7,7 +7,7 @@
 carbonise(x, habitats)
 }
 \arguments{
-\item{x}{habitats data frame}
+\item{x}{habitats sf dataframe}
 
 \item{habitats}{name of the column containing priority habitats types}
 }
@@ -25,7 +25,8 @@ The input dataset needs to be an sf features dataset.
 The CRS for this package is EPSG:27700.  You may need to transform your data for the function to work.
 }
 \examples{
-c <- carbonise(x, habitats = "S41Habitat")
+# NOT RUN
+# c <- carbonise(x, habitats = "S41Habitat")
 }
 \seealso{
 \code{\link[dplyr]{mutate_all}},\code{\link[dplyr]{mutate}},\code{\link[dplyr]{mutate-joins}}
