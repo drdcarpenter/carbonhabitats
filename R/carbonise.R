@@ -30,7 +30,7 @@ carbonise <- function(x, habitats){
   x <- x %>% dplyr::mutate(Area = as.numeric(sf::st_area(x) / 10000))
   
   # join carbon data to habitats data
-  cx <- dplyr::left_join(x, carbon, by = c("S41Habitat" = habitats))
+  cx <- dplyr::left_join(x, carbon, by = c(habitats = "S41Habitat"))
   
   # calculate stored C and sequestered C per feature
   cx$storedC <- as.numeric(cx$Area * cx$AGB)
