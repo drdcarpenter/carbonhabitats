@@ -18,19 +18,20 @@
 #'  \code{\link[sf]{geos_measures}}
 #' @rdname carbonise
 #' @export 
-#' @importFrom dplyr mutate left_join
+#' @importFrom dplyr mutate left_join across
 #' @importFrom sf st_area
 #' @importFrom exactextractr exact_extract
 
 carbonise <- function(x, habitats){
   # convert factors to character for join
-  x <- x %>% dplyr::mutate(across(where(is.factor), as.character))
+  x <- x %>% dplyr::mutate(dplyr::across(where(is.factor), as.character))
   
   # calculate feature areas in hectares
   x <- x %>% dplyr::mutate(Area = as.numeric(sf::st_area(x) / 10000))
   
   # join carbon data to habitats data
-  cx <- dplyr::left_join(x, carbon, by = c(habitats = "S41Habitat"))
+  # cx <- dplyr::left_join(x, carbon, by = c(habitats = "S41Habitat"))
+  cx <- merge(x, carbon, by.x = habitats, by.y = "S41Habitat")
   
   # calculate stored C and sequestered C per feature
   cx$storedC <- as.numeric(cx$Area * cx$AGB)

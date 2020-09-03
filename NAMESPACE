@@ -2,6 +2,7 @@
 
 export("%>%")
 export(carbonise)
+importFrom(dplyr,across)
 importFrom(dplyr,left_join)
 importFrom(dplyr,mutate)
 importFrom(exactextractr,exact_extract)
